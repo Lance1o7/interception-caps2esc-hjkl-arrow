@@ -11,7 +11,7 @@ I could not find a program which only and only remaps
 
 and 
 
-**[Has no dependency on Xorg](https://unix.stackexchange.com/questions/414926/bind-capshjkl-to-arrow-keys-caps-to-esc)** so that it works in tty mode
+**[Has no dependency on Xorg and keyboard layout](https://unix.stackexchange.com/questions/414926/bind-capshjkl-to-arrow-keys-caps-to-esc)** so that it works in tty mode
 
 ## Installation
 

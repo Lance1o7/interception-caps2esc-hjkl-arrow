@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
+project(caps2esc-hjkl-arrow)
 
-project(caps2eschjkl)
-
-add_executable(caps2eschjkl caps2esc_hjkl.c)
-target_compile_options(caps2eschjkl PRIVATE -Wall -Wextra)
-install(TARGETS caps2eschjkl RUNTIME DESTINATION bin)
+add_executable(caps2esc-hjkl-arrow caps2esc_hjkl.c)
+target_compile_options(caps2esc-hjkl-arrow PRIVATE -Wall -Wextra)
+install(TARGETS caps2esc-hjkl-arrow RUNTIME DESTINATION bin)

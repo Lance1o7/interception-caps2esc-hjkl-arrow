@@ -1,6 +1,7 @@
 # interception-caps2esc-hjkl-arrow
 
-Mostly you're here because you use vim/neovim or need vim like bindings. Hence no boilerplate.
+Mostly you're here because you use vim/neovim or need vim like bindings instead of arrow keys.  
+Hence no boilerplate.
 
 ## Why?
 
@@ -10,8 +11,7 @@ I could not find a program which only and only remaps
 
 and 
 
-**Has no dependency on Xorg** so that it works in tty mode
-
+**[Has no dependency on Xorg](https://unix.stackexchange.com/questions/414926/bind-capshjkl-to-arrow-keys-caps-to-esc)** so that it works in tty mode
 
 ## Installation
 

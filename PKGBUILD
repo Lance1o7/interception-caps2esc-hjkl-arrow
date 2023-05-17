@@ -3,13 +3,13 @@
 pkgname=interception-caps2esc-arrow-git
 pkgver=0.0.1
 pkgrel=1
-pkgdesc='Interception plugin caps2esc-hjkl-arrow: Capslock tap for escape key, Capslock hold + hjkl for arrow keys.'
+pkgdesc='Interception plugin: Capslock tap for escape key, Capslock + hjkl for arrow keys.'
 arch=('x86_64')
 license=('MIT')
 url='https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow'
 depends=('interception-tools')
 makedepends=('git' 'cmake')
-source=(interception-caps2esc-arrow-git::git+https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow)
+source=($pkgname::git+https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow)
 md5sums=('SKIP')
 install='post.install'
 

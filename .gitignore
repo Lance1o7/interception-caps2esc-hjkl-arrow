@@ -6,3 +6,8 @@ key-evdev.h
 refer_space_to_meta.c
 try_case.c
 build
+*.pkg.tar.zst
+*-git
+src/*-git
+pkg
+

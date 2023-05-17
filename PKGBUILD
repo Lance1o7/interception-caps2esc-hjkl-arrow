@@ -1,7 +1,7 @@
 # Maintainer: Akarsh Jain <akarsh.1995.02@gmail.com>
 
 pkgname=interception-caps2esc-arrow-git
-pkgver=0.0.1
+pkgver=r11.ee0750d
 pkgrel=1
 pkgdesc='Interception plugin: Capslock tap for escape key, Capslock + hjkl for arrow keys.'
 arch=('x86_64')
@@ -12,6 +12,11 @@ makedepends=('git' 'cmake')
 source=($pkgname::git+https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow)
 md5sums=('SKIP')
 install='post.install'
+
+pkgver() {
+  cd "$pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
 
 build() {
 	cmake -S ${pkgname} \

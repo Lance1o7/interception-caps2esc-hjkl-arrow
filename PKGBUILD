@@ -9,8 +9,9 @@ license=('MIT')
 url='https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow'
 depends=('interception-tools')
 makedepends=('git' 'cmake')
-source=(https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow)
+source=(git+https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow)
 md5sums=('SKIP')
+install='post.install'
 
 build() {
 	cmake -S ${pkgname} \
@@ -23,5 +24,7 @@ build() {
 
 package() {
     DESTDIR="$pkgdir" cmake --install build
-    install -Dm644 caps2esc-hjkl-arrow.yaml "${pkgdir}/etc/interception/udevmon.d/caps2esc-hjkl-arrow.yaml"
+    install -Dm644 ${pkgname}/caps2esc-hjkl-arrow.yaml "${pkgdir}/etc/interception/udevmon.d/caps2esc-hjkl-arrow.yaml"
 }
+
+

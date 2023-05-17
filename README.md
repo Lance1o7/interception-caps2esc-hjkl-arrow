@@ -17,8 +17,11 @@ and
 
 ### Arch users
 
-`pacman -S interception-caps2esc-arrow-git`
-
+```sh
+git clone https://aur.archlinux.org/interception-caps2esc-arrow-git.git
+cd interception-caps2esc-arrow-git
+makepkg -si
+```
 
 ### Other distributions
 

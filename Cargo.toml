@@ -1,5 +1,5 @@
 [package]
-name = "caps2esc-hjkl"
+name = "caps2esc-hjkl-arrow"
 version = "0.1.0"
 edition = "2021"
 
@@ -9,6 +9,9 @@ edition = "2021"
 # registry = "git://github.com/rust-lang/crates.io-index.git"
 
 [dependencies]
-evdev = { git="https://github.com/emberian/evdev.git"}
-libc = "0.2.144"
-nix = "0.26.2"
+interception-rs = { git="https://github.com/akarsh1995/interception-rs", rev="1e7be72" }
+
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+opt-level = "z"  # Optimize for size.
+lto = true

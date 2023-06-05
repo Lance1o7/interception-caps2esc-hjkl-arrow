@@ -11,3 +11,8 @@ build
 src/*-git
 pkg
 
+
+
+# Added by cargo
+
+/target

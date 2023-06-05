@@ -60,7 +60,7 @@ checksum = "e6d5a32815ae3f33302d95fdcb2ce17862f8c65363dcfd29360480ba1001fc9c"
 [[package]]
 name = "interception-rs"
 version = "0.1.0"
-source = "git+https://github.com/akarsh1995/interception-rs?rev=1e7be72#1e7be7235a0790d0a6ce9a92ca757e3d6523c5db"
+source = "git+https://github.com/akarsh1995/interception-rs?rev=e5ed82f#e5ed82ff2d0756f0c4c85a7fbbe07d440f4e0aea"
 dependencies = [
  "evdev",
  "libc",

@@ -9,7 +9,7 @@ edition = "2021"
 # registry = "git://github.com/rust-lang/crates.io-index.git"
 
 [dependencies]
-interception-rs = { git="https://github.com/akarsh1995/interception-rs", rev="1e7be72" }
+interception-rs = { git="https://github.com/akarsh1995/interception-rs", rev="e5ed82f" }
 
 [profile.release]
 strip = true  # Automatically strip symbols from the binary.

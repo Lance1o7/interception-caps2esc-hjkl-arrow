@@ -5,6 +5,10 @@ pub trait HelperMods: InterceptInput {
         self.key_code() == KeyCode::KEY_CAPSLOCK
     }
 
+    fn is_esc(&self) -> bool {
+        self.key_code() == KeyCode::KEY_ESC
+    }
+
     fn is_hjkl(&self) -> bool {
         match self.key_code() {
             KeyCode::KEY_H | KeyCode::KEY_J | KeyCode::KEY_K | KeyCode::KEY_L => true,

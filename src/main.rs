@@ -10,7 +10,28 @@ fn main() {
                 evm.write_event(ev);
                 continue;
             }
-            if ev.is_caps() && (ev.is_down() || ev.is_repeat()) {
+            if ev.is_esc() && ev.is_down() {
+                'esc_down: loop {
+                    for ede in evm.fetch_events_batch() {
+                        if !ede.is_key() {
+                            evm.write_event(ede);
+                            continue;
+                        };
+                        if ede.is_esc() && ede.is_up() {
+                            evm.write_event(KeyCode::KEY_CAPSLOCK.down());
+                            evm.write_sync_event(20_000);
+                            evm.write_event(KeyCode::KEY_CAPSLOCK.up());
+                            break 'esc_down;
+                        } else {
+                            evm.write_event(KeyCode::KEY_ESC.down());
+                            evm.write_sync_event(20_000);
+                            evm.write_event(KeyCode::KEY_ESC.up());
+                            evm.write_event(ede);
+                            break 'esc_down;
+                        }
+                    }
+                }
+            } else if ev.is_caps() && (ev.is_down() || ev.is_repeat()) {
                 if evm.get_last_event().is_repeat() {
                     evm.write_sync_event(20_000);
                     evm.write_event(evm.get_last_event().get_up_ev());

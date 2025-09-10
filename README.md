@@ -14,7 +14,21 @@ and
 **[Has no dependency on Xorg and keyboard layout](https://unix.stackexchange.com/questions/414926/bind-capshjkl-to-arrow-keys-caps-to-esc)** so that it works in tty mode
 
 ## Installation
+### Debian 13
 
+```sh
+# Install rust if needed - https://rustup.rs/
+sudo apt install interception-tools
+git clone https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow
+cd interception-caps2esc-hjkl-arrow
+cargo build  --release --all-features
+sudo cp target/release/caps2esc-hjkl-arrow /usr/bin/
+sudo cp caps2esc-hjkl-arrow.yaml /etc/interception/udevmon.d/
+sudo vim /etc/interception-vimproved/config.yaml # change "intercept" to "interception"
+# details: https://packages.debian.org/bookworm/interception-tools, The upstream command name 'intercept' is renamed to 'interception' in this package to avoid the name collision. If you wish to use command names which the upstream uses, please install the interception-tools-compat package.
+sudo systemctl restart udevmon.service
+sudo systemctl enable udevmon.service
+```
 ### Arch users
 
 ```sh
@@ -22,44 +36,3 @@ git clone https://aur.archlinux.org/interception-caps2esc-arrow-git.git
 cd interception-caps2esc-arrow-git
 makepkg -si
 ```
-
-### Other distributions
-
-#### Install Dependencies
-
-- [Interception Tools](https://gitlab.com/interception/linux/tools)  
-    - void `xbps-install -S interception-tools`
-    - ubuntu
-        ```sh
-        sudo add-apt-repository ppa:deafmute/interception
-        sudo apt install interception-tools
-        ```
-    - fedora
-        ```sh
-        sudo dnf copr enable fszymanski/interception-tools
-        sudo dnf install interception-tools
-        ```
-    - from source [build from source](https://gitlab.com/interception/linux/tools#building)
-
-#### Building and Installing
-
-```sh
-git clone https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow
-cd interception-caps2esc-hjkl-arrow
-cmake -S . \
-    -B build \
-    -DCMAKE_INSTALL_PREFIX=/usr/local \
-    -DCMAKE_BUILD_TYPE=Release \
-    -Wno-dev
-cmake --build build
-sudo cmake --install build
-sudo cp ./caps2esc-hjkl-arrow.yaml /etc/interception/udevmon.d/caps2esc-hjkl-arrow.yaml
-# restart udevmon daemon (interception-tools)
-sudo systemctl restart udevmon.service
-# enable daemon on restart
-sudo systemctl enable udevmon.service
-```
-
-## Execution
-
-If everything goes well you'll be able to make use of your capslock as intended.

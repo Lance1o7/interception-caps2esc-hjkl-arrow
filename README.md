@@ -19,7 +19,7 @@ and
 ```sh
 # Install rust if needed - https://rustup.rs/
 sudo apt install interception-tools
-git clone https://github.com/akarsh1995/interception-caps2esc-hjkl-arrow
+git clone https://github.com/Lance1o7/interception-caps2esc-hjkl-arrow
 cd interception-caps2esc-hjkl-arrow
 cargo build  --release --all-features
 sudo cp target/release/caps2esc-hjkl-arrow /usr/bin/

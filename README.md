@@ -32,7 +32,7 @@ sudo systemctl enable udevmon.service
 ### Fedora
 ```
 sudo dnf copr enable brirec/interception-tools
-sudo dnf instlal interception-tools
+sudo dnf install interception-tools
 git clone https://github.com/Lance1o7/interception-caps2esc-hjkl-arrow
 cd interception-caps2esc-hjkl-arrow
 cargo build  --release --all-features

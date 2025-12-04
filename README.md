@@ -29,10 +29,18 @@ sudo vim /etc/interception-vimproved/config.yaml # change "intercept" to "interc
 sudo systemctl restart udevmon.service
 sudo systemctl enable udevmon.service
 ```
-### Arch users
-
-```sh
-git clone https://aur.archlinux.org/interception-caps2esc-arrow-git.git
-cd interception-caps2esc-arrow-git
-makepkg -si
+### Fedora
 ```
+sudo dnf copr enable brirec/interception-tools
+sudo dnf instlal interception-tools
+git clone https://github.com/Lance1o7/interception-caps2esc-hjkl-arrow
+cd interception-caps2esc-hjkl-arrow
+cargo build  --release --all-features
+sudo cp target/release/caps2esc-hjkl-arrow /usr/bin/
+sudo mkdir /etc/interception/
+sudo mkdir /etc/interception/udevmon.d/
+sudo cp caps2esc-hjkl-arrow.yaml /etc/interception/udevmon.d/
+sudo systemctl restart udevmon.service
+sudo systemctl enable udevmon.service
+```
+
